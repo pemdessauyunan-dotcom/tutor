@@ -74,15 +74,13 @@
           solution: { html: HTML_NAV_HERO },
           celebrate: 'Kerangka awal berdiri! Situsmu punya navigasi dan hero yang siap diisi.'
         },
-        quiz: {
-          pass: 3, min: 3, pick: 3, bank: [
+        quiz: [
             { type: 'mcq', id: 'l8-1-q1', q: 'Apa fungsi href="#kontak" pada sebuah tautan?', options: ['Melompat ke elemen ber-id "kontak" di halaman yang sama', 'Membuka situs lain', 'Mengirim email', 'Mengulang halaman', 'Menutup halaman'], answer: 0, explanation: 'Awalan # menunjuk ke id target untuk lompat anchor.' },
             { type: 'mcq', id: 'l8-1-q2', q: 'Section <code>header</code> biasanya dipakai untuk…', options: ['Bagian pembuka/navigasi atas halaman', 'Isi utama artikel', 'Catatan kaki', 'Gambar', 'Skrip'], answer: 0, explanation: 'header menandai wilayah kepala/navigasi.' },
             { type: 'fill', id: 'l8-1-q3', q: 'Tag pembungkus navigasi:', before: '<______>\n  <a href="#menu">Menu</a>\n</______>', answerText: ['nav'], explanation: 'Elemen <nav> menandai blok tautan navigasi.' },
             { type: 'mcq', id: 'l8-1-q4', q: 'Istilah "CTA" pada tombol ajakan berarti…', options: ['Call To Action (ajakan bertindak)', 'Cascading Text Attribute', 'Core Tag Element', 'Cached Template Asset', 'Close The Anchor'], answer: 0, explanation: 'CTA = Call To Action, tombol yang mengajak pengguna bertindak.' },
             { type: 'order', id: 'l8-1-q5', q: 'Urutan penyusun halaman yang lazim:', lines: ['Deklarasi <!DOCTYPE html>', '<html> & <head> (meta, judul)', '<body> dengan header/nav', 'Section konten (hero, menu, dst)', '<footer> penutup'], explanation: 'Dari deklarasi, kepala, badan, konten, lalu penutup.' }
-          ]
-        }
+        ]
       },
 
       /* 8.2 — konten HTML: menu, tentang, kontak, footer */
@@ -118,15 +116,13 @@
           solution: { html: HTML_FULL },
           celebrate: 'Struktur lengkap! Situsmu kini punya menu, profil, dan form — tinggal didandani.'
         },
-        quiz: {
-          pass: 3, min: 3, pick: 3, bank: [
+        quiz: [
             { type: 'mcq', id: 'l8-2-q1', q: 'Tag paling tepat untuk satu kartu produk di daftar menu?', options: ['<article>', '<p>', '<h1>', '<br>', '<hr>'], answer: 0, explanation: 'article menandai bagian mandiri seperti satu kartu produk.' },
             { type: 'multi', id: 'l8-2-q2', q: 'Bagian yang wajib ada di section kontak agar bisa divalidasi JS:', options: ['<input id="nama">', '<button id="kirim">', '<p id="hasil">', '<video>', '<table>'], answer: [0, 1, 2], wrongWhy: ['', '', '', 'Elemen video tidak berperan pada form.', 'Table untuk data tabular, bukan input.'], explanation: 'Isian, tombol, dan tempat pesan adalah ketiganya.' },
             { type: 'mcq', id: 'l8-2-q3', q: 'Untuk menulis "©" tanpa karakter khusus, kita pakai…', options: ['entitas &copy;', 'tag <copy>', 'CSS ©', 'JavaScript', 'kompilasi'], answer: 0, explanation: 'Entitas HTML seperti &copy; menampilkan karakter khusus dengan aman.' },
             { type: 'fill', id: 'l8-2-q4', q: 'Atribut pemberi nama unik untuk dipakai CSS/JS:', before: '<section ____="menu">', answerText: ['id'], explanation: 'id memberi nama unik satu elemen, dipakai CSS (#menu) maupun JS (getElementById).' },
             { type: 'bug', id: 'l8-2-q5', q: 'Struktur kartu rusak.', code: '<div class="kartu">\n  <article class="item">\n    <h3>Kopi</h3>\n    <p class="harga">Rp18.000</p>\n  <article>\n</div>', instruction: 'Klik baris yang mengandung kesalahan.', bugLine: 4, explanation: 'Baris 5 membuka <article> lagi, padahal seharusnya tag penutup </article>.' }
-          ]
-        }
+        ]
       },
 
       /* 8.3 — CSS dasar */
@@ -161,15 +157,13 @@
           solution: { html: HTML_FULL, css: CSS_BASE },
           celebrate: 'Sentuhan pertama! Hero dan tombol kini terlihat seperti situs betulan.'
         },
-        quiz: {
-          pass: 4, min: 4, pick: 4, bank: [
+        quiz: [
             { type: 'mcq', id: 'l8-3-q1', q: 'Cara membaca variabel CSS --aksen?', options: ['var(--aksen)', '$aksen', '{--aksen}', '@aksen', '#aksen'], answer: 0, explanation: 'Fungsi var() memanggil nilai variabel.' },
             { type: 'mcq', id: 'l8-3-q2', q: 'border-radius: 999px pada tombol menghasilkan…', options: ['Ujung membulat seperti pil', 'Bayangan tebal', 'Garis tepi', 'Tulisan miring', 'Transparansi'], answer: 0, explanation: 'Radius besar membuat seluruh ujung melingkar sempurna.' },
             { type: 'multi', id: 'l8-3-q3', q: 'Properti yang mengatur jarak/"napas" elemen:', options: ['padding', 'margin', 'gap', 'width', 'color'], answer: [0, 1, 2], wrongWhy: ['', '', '', 'width mengatur lebar, bukan jarak.', 'color mengatur warna, bukan jarak.'], explanation: 'padding, margin, dan gap mengatur jarak di dalam/luar antar elemen.' },
             { type: 'fill', id: 'l8-3-q4', q: 'Selector tempat variabel didaftarkan:', before: '______ { --aksen: #b5651d; }', answerText: [':root', 'root'], explanation: ':root menandai elemen terluar tempat variabel global didefinisikan.' },
             { type: 'mcq', id: 'l8-3-q5', q: 'text-align: center pada .hero akan…', options: ['Meratakan isi teks ke tengah', 'Memusatkan elemen secara flex', 'Mengubah warna', 'Menambah padding', 'Membuat kolom'], answer: 0, explanation: 'text-align memusatkan teks di dalam blok.' }
-          ]
-        }
+        ]
       },
 
       /* 8.4 — CSS tata letak & responsif */
@@ -207,15 +201,13 @@
           solution: { html: HTML_FULL, css: CSS_FULL },
           celebrate: 'Tata letak jadi! Rapi di desktop, gesit di ponsel.'
         },
-        quiz: {
-          pass: 4, min: 4, pick: 4, bank: [
+        quiz: [
             { type: 'mcq', id: 'l8-4-q1', q: 'Untuk kisi 3 kolom, kita pakai…', options: ['display: grid', 'display: flex saja', 'position: absolute', 'float: left', 'text-align'], answer: 0, explanation: 'Grid mengatur kolom & baris (2 dimensi).' },
             { type: 'mcq', id: 'l8-4-q2', q: 'Fungsi @media (max-width: 640px){…}?', options: ['Memakai gaya hanya saat layar ≤ 640px', 'Gaya selalu aktif', 'Mengubah JS', 'Memuat font', 'Menyembunyikan HTML'], answer: 0, explanation: 'Kondisi max-width menerapkan isi hanya pada layar sempit.' },
             { type: 'mcq', id: 'l8-4-q3', q: 'margin-left: auto pada nav bertujuan…', options: ['Mendorong nav ke tepi kanan', 'Menghapus margin', 'Menengahkan teks', 'Membuat border', 'Mengubah warna'], answer: 0, explanation: 'auto menyerap ruang sisa dan menggeser nav ke kanan.' },
             { type: 'fill', id: 'l8-4-q4', q: 'Fungsi CSS untuk mengulang kolom:', before: 'grid-template-columns: ______(3, 1fr);', answerText: ['repeat'], explanation: 'repeat(3, 1fr) membuat tiga kolom rata.' },
             { type: 'order', id: 'l8-4-q5', q: 'Urutan dari makro ke mikro saat menata layout:', lines: ['Tentukan arah (flex/grid)', 'Atur kolom/baris', 'Beri jarak (gap/padding)', 'Selaraskan (align/justify)', 'Tambah breakpoint @media'], explanation: 'Arah dulu, lalu struktur kolom, jarak, perataan, baru penyesuaian responsif.' }
-          ]
-        }
+        ]
       },
 
       /* 8.5 — JS: toggle tema */
@@ -249,15 +241,13 @@
           solution: { html: HTML_FULL, css: CSS_FULL, js: JS_THEME },
           celebrate: 'Klik pertama yang hidup! Situs kini bisa berganti wajah.'
         },
-        quiz: {
-          pass: 3, min: 3, pick: 3, bank: [
+        quiz: [
             { type: 'mcq', id: 'l8-5-q1', q: 'Nilai kembali classList.toggle("gelap") saat class baru saja DITAMBAHKAN?', options: ['true', 'false', '"gelap"', 'undefined', '0'], answer: 0, explanation: 'toggle mengembalikan true bila class jadi aktif.' },
             { type: 'mcq', id: 'l8-5-q2', q: 'Perintah memasang aksi saat tombol diklik:', options: ['btn.addEventListener("click", fn)', 'btn.onClick(fn)', 'click(btn, fn)', 'btn.listen("click")', 'addEventListener(fn)'], answer: 0, explanation: 'addEventListener adalah cara baku memasang event.' },
             { type: 'fill', id: 'l8-5-q3', q: 'Properti untuk menulis teks elemen:', before: 'el.______ = "Halo";', answerText: ['textContent', 'innerText'], explanation: 'textContent (atau innerText) menaruh tulisan ke dalam elemen.' },
             { type: 'multi', id: 'l8-5-q4', q: 'Yang termasuk cara memilih elemen DOM:', options: ['getElementById', 'querySelector', 'getElementsByClassName', 'selectNode', 'pickDOM'], answer: [0, 1, 2], wrongWhy: ['', '', '', 'selectNode bukan API DOM.', 'pickDOM tidak ada di JavaScript.'], explanation: 'Tiga API seleksi DOM yang sah.' },
             { type: 'bug', id: 'l8-5-q5', q: 'Status tak berubah saat tombol diklik.', code: 'document.getElementById("tema").addEventListener("click", function () {\n  var gelap = document.body.classList.toggle("gelap");\n  document.getElementById("temastatus").value = gelap ? "Gelap" : "Terang";\n});', instruction: 'Klik baris yang menjadi sumber masalah.', bugLine: 2, explanation: 'Baris 3 memakai .value, padahal <span> butuh .textContent — tulisan tak akan berubah.' }
-          ]
-        }
+        ]
       },
 
       /* 8.6 — JS: keranjang pesanan (counter harga) */
@@ -294,15 +284,13 @@
           solution: { html: HTML_FULL, css: CSS_FULL, js: JS_THEME + JS_COUNTER },
           celebrate: 'Angka bergerak! Fitur keranjang pesanan sudah berfungsi.'
         },
-        quiz: {
-          pass: 4, min: 4, pick: 4, bank: [
+        quiz: [
             { type: 'mcq', id: 'l8-6-q1', q: 'Agar jumlah tidak jadi negatif saat #minus diklik?', options: ['if (qty > 0) { qty = qty - 1; }', 'qty = qty - 1;', 'qty = Math.abs(qty);', 'qty = 0;', 'qty--;'], answer: 0, explanation: 'Pagar kondisi menjaga qty tak turun dari 0.' },
             { type: 'fill', id: 'l8-6-q2', q: 'Method merapikan angka berformat ribuan lokal:', before: '(18000).___________("id-ID")', answerText: ['toLocaleString'], explanation: 'toLocaleString memformat angka sesuai locale (18.000).' },
             { type: 'mcq', id: 'l8-6-q3', q: 'Jika qty = 3 dan harga 18000, total yang tampil…', options: ['Rp54.000', 'Rp18.000', 'Rp3', 'Rp21.000', 'Rp0'], answer: 0, explanation: '3 × 18.000 = 54.000.' },
             { type: 'multi', id: 'l8-6-q4', q: 'Yang benar tentang memisahkan fungsi gambarTotal():', options: ['Menghindari kode duplikat', 'Menyatukan logika tampilan', 'Mudah diubah satu tempat', 'Memperlambat halaman', 'Wajib untuk counter'], answer: [0, 1, 2], wrongWhy: ['', '', '', 'Fungsi tidak memperlambat halaman.', 'Bukan wajib, hanya praktik baik.'], explanation: 'Fungsi memusatkan logika render.' },
             { type: 'bug', id: 'l8-6-q5', q: 'Total tidak berubah walau #plus diklik.', code: 'var qty = 0;\nfunction gambarTotal() {\n  var total = qty * 18000;\n  document.getElementById("total").value = total;\n}', instruction: 'Klik baris yang keliru.', bugLine: 3, explanation: 'Untuk <strong> pakai textContent, bukan .value (value hanya untuk elemen input).' }
-          ]
-        }
+        ]
       },
 
       /* 8.7 — JS: form validasi + situs jadi */
@@ -337,15 +325,13 @@
           solution: { html: HTML_FULL, css: CSS_FULL, js: JS_THEME + JS_COUNTER + JS_FORM },
           celebrate: 'SELESAI! Kamu baru saja membangun website kecil sungguhan — HTML, CSS, dan JavaScript menyatu jadi satu.'
         },
-        quiz: {
-          pass: 4, min: 4, pick: 4, bank: [
+        quiz: [
             { type: 'mcq', id: 'l8-7-q1', q: 'Mengapa .trim() dipakai saat membaca input nama?', options: ['Menghapus spasi kosong di awal/akhir', 'Mengubah jadi angka', 'Menambah huruf', 'Menghapus semua karakter', 'Membesar-hurufkan'], answer: 0, explanation: 'trim membuang spasi tak terlihat agar cek kosong akurat.' },
             { type: 'mcq', id: 'l8-7-q2', q: 'Pernyataan yang membuat fungsi berhenti lebih awal bila nama kosong?', options: ['return;', 'break;', 'continue;', 'exit;', 'stop();'], answer: 0, explanation: 'return keluar dari fungsi sebelum baris ucapan.' },
             { type: 'multi', id: 'l8-7-q3', q: 'Tiga pilar yang dipadukan proyek ini:', options: ['HTML untuk struktur', 'CSS untuk gaya', 'JavaScript untuk perilaku', 'PHP untuk database', 'SQL untuk tabel'], answer: [0, 1, 2], wrongWhy: ['', '', '', 'PHP bahasa server, tak dipakai di sini.', 'SQL untuk database, tak ada di proyek ini.'], explanation: 'Front-end situs dibangun dari ketiganya.' },
             { type: 'mcq', id: 'l8-7-q4', q: 'Proyek ini tanpa backend. Artinya data pesanan…', options: ['Hanya hidup di sisi klien (browser)', 'Tersimpan permanen di server', 'Terkirim ke database', 'Dienkripsi otomatis', 'Dikirim via email'], answer: 0, explanation: 'Semua berjalan di browser; tak ada penyimpanan server.' },
             { type: 'order', id: 'l8-7-q5', q: 'Alur membangun proyek front-end yang sehat:', lines: ['Rancang struktur HTML', 'Rapikan tata letak & gaya CSS', 'Tambah interaktivitas JS', 'Uji & perbaiki (debug)', 'Poles & publikasikan'], explanation: 'Struktur → gaya → perilaku → uji → poles.' }
-          ]
-        }
+        ]
       }
     ]
   };
