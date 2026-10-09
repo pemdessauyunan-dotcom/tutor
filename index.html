@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="id" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="description" content="Belajar HTML dari nol sampai menengah. Interaktif, tanpa backend, gratis." />
+<meta name="color-scheme" content="dark light" />
+<title>Nol ke HTML — Belajar coding dari nol</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" />
+
+<link rel="stylesheet" href="css/style.css" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230a0a0c'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Georgia' font-size='18' fill='%23d4a24c'%3E0%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+
+<a class="skip-link" href="#main">Lewati ke konten utama</a>
+
+<!-- ==================== HEADER ==================== -->
+<header class="app-header" role="banner">
+  <button class="icon-btn only-mobile" id="btnHamburger" aria-label="Buka menu pelajaran" aria-expanded="false" aria-controls="sidebar">
+    <span class="bars" aria-hidden="true"></span>
+  </button>
+
+  <a class="brand" href="#/" aria-label="Kembali ke Beranda">
+    <span class="brand-mark" aria-hidden="true">0<span class="brand-slash">→</span>H</span>
+    <span class="brand-text">
+      <span class="brand-title">Nol ke HTML</span>
+      <span class="brand-sub">belajar dari nol, sungguhan</span>
+    </span>
+  </a>
+
+  <div class="header-progress" title="Kemajuan belajarmu secara keseluruhan" aria-hidden="true">
+    <div class="hp-bar"><div class="hp-fill" id="hpFill"></div></div>
+    <span class="hp-pct" id="hpPct">0%</span>
+  </div>
+
+  <div class="header-stats" role="status" aria-live="polite">
+    <span class="chip chip-xp" id="chipXp" title="Poin pengalaman (XP)">
+      <span class="chip-icon" aria-hidden="true">✦</span>
+      <span class="chip-value" id="chipXpVal">0</span>
+      <span class="chip-label" id="chipLevelLabel">Rekrutan</span>
+    </span>
+    <span class="chip chip-streak" id="chipStreak" title="Hari beruntun kamu belajar">
+      <span class="chip-icon" aria-hidden="true">🔥</span>
+      <span class="chip-value" id="chipStreakVal">0</span>
+      <span class="chip-label">hari</span>
+    </span>
+  </div>
+
+  <div class="header-actions">
+    <button class="icon-btn" id="btnSearch" aria-label="Cari pelajaran (Ctrl+K)" title="Cari pelajaran (Ctrl+K)">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    </button>
+    <button class="icon-btn" id="btnTheme" aria-label="Ganti tema gelap/terang" title="Ganti tema (T)">
+      <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+    </button>
+    <button class="icon-btn" id="btnSettings" aria-label="Buka pengaturan" title="Pengaturan">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.9 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.9.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.6 1.7 1.7 0 0 0 1.9-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.9V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- ==================== SIDEBAR ==================== -->
+<aside class="sidebar" id="sidebar" aria-label="Daftar pelajaran">
+  <nav class="sidebar-nav" id="sidebarNav" role="navigation"></nav>
+  <div class="sidebar-foot">
+    <button class="ghost-btn" id="btnShortcuts" aria-label="Lihat pintasan keyboard">
+      <kbd>?</kbd> Pintasan keyboard
+    </button>
+  </div>
+</aside>
+<div class="sidebar-backdrop" id="sidebarBackdrop" hidden></div>
+
+<!-- ==================== MAIN ==================== -->
+<main id="main" class="app-main" tabindex="-1" role="main">
+  <!-- Halaman di-render oleh engine.js sesuai hash route -->
+</main>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="app-foot" role="contentinfo">
+  <span>Dibuat untuk pemula sejati. Progresmu tersimpan di perangkat ini saja.</span>
+</footer>
+
+<!-- ==================== MODAL: ONBOARDING ==================== -->
+<div class="modal" id="modalOnboarding" hidden role="dialog" aria-modal="true" aria-labelledby="obTitle">
+  <div class="modal-card ob-card">
+    <div class="ob-step" data-step="1">
+      <p class="ob-kicker">Selamat datang</p>
+      <h2 id="obTitle" class="ob-title">Kita mulai dari mana, ya?</h2>
+      <p class="ob-lede">Tenang, website ini dirancang untuk kamu yang <em>belum pernah</em> menulis satu baris kode pun. Tidak akan ada istilah aneh yang muncul tanpa penjelasan.</p>
+      <label class="field">
+        <span class="field-label">Namamu siapa? (dipakai untuk menyapa, tidak dikirim ke mana-mana)</span>
+        <input type="text" id="obName" maxlength="24" placeholder="misal: Rani" autocomplete="off" />
+      </label>
+      <div class="btn-row">
+        <button class="btn btn-primary" data-ob-next="2">Mulai →</button>
+      </div>
+    </div>
+
+    <div class="ob-step" data-step="2" hidden>
+      <p class="ob-kicker">Langkah 2 dari 3</p>
+      <h2 class="ob-title">Seberapa jauh kamu sudah pernah menyentuh HTML?</h2>
+      <div class="choice-grid" role="radiogroup" aria-label="Pengalaman awal">
+        <label class="choice">
+          <input type="radio" name="obExp" value="nol" checked />
+          <span class="choice-body">
+            <span class="choice-title">Benar-benar nol</span>
+            <span class="choice-desc">Belum pernah buka VS Code, belum tahu tag itu apa. Santai, kita mulai dari Pelajaran 1.</span>
+          </span>
+        </label>
+        <label class="choice">
+          <input type="radio" name="obExp" value="sedikit" />
+          <span class="choice-body">
+            <span class="choice-title">Pernah sedikit</span>
+            <span class="choice-desc">Pernah coba-coba tag, tahu CSS itu warna-warni. Boleh ikut tes penempatan 5 soal.</span>
+          </span>
+        </label>
+      </div>
+      <div class="btn-row">
+        <button class="btn btn-ghost" data-ob-back="1">← Kembali</button>
+        <button class="btn btn-primary" data-ob-next="3">Lanjut →</button>
+      </div>
+    </div>
+
+    <div class="ob-step" data-step="3" hidden>
+      <p class="ob-kicker">Langkah 3 dari 3</p>
+      <h2 class="ob-title">Target belajar per hari?</h2>
+      <p class="ob-lede">Angka ini hanya untuk mengingatkan, tidak menghukum. Konsisten kecil lebih baik dari maraton sekali lalu hilang.</p>
+      <div class="choice-grid choice-grid--row" role="radiogroup" aria-label="Target harian">
+        <label class="choice choice--pill"><input type="radio" name="obTarget" value="10" /><span class="choice-pill">10 menit</span></label>
+        <label class="choice choice--pill"><input type="radio" name="obTarget" value="20" checked /><span class="choice-pill">20 menit</span></label>
+        <label class="choice choice--pill"><input type="radio" name="obTarget" value="45" /><span class="choice-pill">45 menit</span></label>
+        <label class="choice choice--pill"><input type="radio" name="obTarget" value="90" /><span class="choice-pill">1 jam+</span></label>
+      </div>
+      <div class="btn-row">
+        <button class="btn btn-ghost" data-ob-back="2">← Kembali</button>
+        <button class="btn btn-primary" id="obFinish">Selesai & mulai belajar ✨</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== MODAL: PENGATURAN ==================== -->
+<div class="modal" id="modalSettings" hidden role="dialog" aria-modal="true" aria-labelledby="stTitle">
+  <div class="modal-card">
+    <header class="modal-head">
+      <h2 id="stTitle">Pengaturan</h2>
+      <button class="icon-btn" data-close-modal aria-label="Tutup pengaturan">✕</button>
+    </header>
+    <div class="modal-body settings-body" id="settingsBody"><!-- diisi JS --></div>
+  </div>
+</div>
+
+<!-- ==================== OVERLAY: PENCARIAN ==================== -->
+<div class="overlay" id="searchOverlay" hidden role="dialog" aria-modal="true" aria-label="Pencarian">
+  <div class="search-panel" role="search">
+    <input type="search" id="searchInput" placeholder="Cari pelajaran, istilah, atau tag…  (Esc untuk tutup)" autocomplete="off" aria-label="Kata kunci pencarian" />
+    <ul class="search-results" id="searchResults" role="listbox" aria-live="polite"></ul>
+    <div class="search-foot"><span>Enter untuk buka · ↑↓ untuk pindah · Esc untuk tutup</span></div>
+  </div>
+</div>
+
+<!-- ==================== MODAL: SHORTCUTS ==================== -->
+<div class="modal" id="modalShortcuts" hidden role="dialog" aria-modal="true" aria-labelledby="scTitle">
+  <div class="modal-card modal-card--narrow">
+    <header class="modal-head">
+      <h2 id="scTitle">Pintasan keyboard</h2>
+      <button class="icon-btn" data-close-modal aria-label="Tutup">✕</button>
+    </header>
+    <div class="modal-body">
+      <ul class="kbd-list">
+        <li><kbd>Ctrl</kbd>+<kbd>K</kbd><span>Buka pencarian global</span></li>
+        <li><kbd>T</kbd><span>Ganti tema gelap/terang</span></li>
+        <li><kbd>?</kbd><span>Tampilkan daftar pintasan ini</span></li>
+        <li><kbd>←</kbd> / <kbd>→</kbd><span>Pindah halaman baca (halaman materi)</span></li>
+        <li><kbd>Enter</kbd><span>Jalankan kode (saat editor fokus)</span></li>
+        <li><kbd>Esc</kbd><span>Tutup dialog / pencarian</span></li>
+      </ul>
+      <p class="muted">Pintasan nonaktif saat kamu sedang mengetik di input atau editor.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== MODAL: KONFIRMASI UMUM ==================== -->
+<div class="modal" id="modalConfirm" hidden role="dialog" aria-modal="true" aria-labelledby="cfTitle">
+  <div class="modal-card modal-card--narrow">
+    <header class="modal-head"><h2 id="cfTitle">Yakin?</h2><button class="icon-btn" data-close-modal aria-label="Tutup">✕</button></header>
+    <div class="modal-body"><p id="cfBody">…</p></div>
+    <footer class="modal-foot">
+      <button class="btn btn-ghost" data-close-modal>Batal</button>
+      <button class="btn btn-danger" id="cfOk">Ya, lanjutkan</button>
+    </footer>
+  </div>
+</div>
+
+<!-- ==================== TOAST ==================== -->
+<div class="toast-wrap" id="toastWrap" aria-live="polite" aria-atomic="true"></div>
+
+<!-- ==================== SCRIPTS ==================== -->
+<!-- Inti: storage + curriculum harus ada SEBELUM file data mendaftarkan level -->
+<script src="js/storage.js"></script>
+<script src="js/curriculum.js"></script>
+
+<!-- Data kurikulum: tiap file memanggil TutorData.registerLevel({...}) -->
+<script src="data/level-01.js"></script>
+<script src="data/level-02.js"></script>
+<script src="data/level-03.js"></script>
+<script src="data/level-04.js"></script>
+<script src="data/level-05.js"></script>
+<script src="data/level-06.js"></script>
+<script src="data/level-07.js"></script>
+<script src="data/level-08.js"></script>
+
+<!-- Mesin interaktif -->
+<script src="js/editor.js"></script>
+<script src="js/quiz.js"></script>
+<script src="js/gamify.js"></script>
+<script src="js/pages.js"></script>
+
+<!-- Router & UI -->
+<script src="js/engine.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
